@@ -11,6 +11,6 @@
 
 int main(void)
 {
-	DDRB |= 0x01;
+    DDRB |= 0x01;
 }
 
