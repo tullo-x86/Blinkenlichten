@@ -7,9 +7,10 @@
  */
 
 #include "ws2811.h"
+#include <avr/io.h>
 
 int main(void)
 {
-
+	DDRB |= 0x01;
 }
 
