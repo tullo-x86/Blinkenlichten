@@ -1,3 +1,6 @@
+# Solution options
+*.atsuo
+
 # Compiled Object files
 *.slo
 *.lo
