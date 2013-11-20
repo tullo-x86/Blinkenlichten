@@ -11,16 +11,7 @@
 #define WS2811_h
 
 #include <avr/io.h>
-// RGB value structure.
-typedef struct __attribute__ ((__packed__)) {
-    uint8_t r;
-    uint8_t g;
-    uint8_t b;
-} RGB_t;
-
-#ifndef ARRAYLEN
-#define ARRAYLEN(A) (sizeof(A) / sizeof(A[0]))
-#endif
+#include "ws2811_types.h"
 
 /*
  * Inline asm macro to output 24-bit RGB value in (G,R,B) order, MSBit first.
