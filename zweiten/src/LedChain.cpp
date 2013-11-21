@@ -29,3 +29,8 @@ void LedChain::Update()
 {
     _sendFrame(_buffer, _length);
 }
+
+int LedChain::GetLength()
+{
+    return _length;
+}

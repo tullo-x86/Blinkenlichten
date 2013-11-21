@@ -25,10 +25,7 @@ public:
     void SetPixel(int index, RGB_t colour);
     void Update();
 
-private:
-	LedChain( const LedChain &c );
-	LedChain& operator=( const LedChain &c );
-
+    int GetLength();
 };
 
-#endif //__LEDCHAIN_H__
+#endif
