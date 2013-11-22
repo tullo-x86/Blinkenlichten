@@ -30,4 +30,4 @@
 *.d
 *.mk
 *.srec
-makefile
+[Mm]akefile
