@@ -20,17 +20,25 @@ LedChain::LedChain(SendFrame sendFrame, RGB_t *buffer, int length)
 
 LedChain::~LedChain() {}
 
+int LedChain::GetLength()
+{
+    return _length;
+}
+
 void LedChain::SetPixel(int index, RGB_t colour)
 {
     _buffer[index] = colour;
 }
 
+void LedChain::ShiftBackward(int count)
+{
+    for (int i = _length - count - 1; i >= 0; i--)
+    {
+        _buffer[i + count] = _buffer[i];
+    }
+}
+
 void LedChain::Update()
 {
     _sendFrame(_buffer, _length);
-}
-
-int LedChain::GetLength()
-{
-    return _length;
 }

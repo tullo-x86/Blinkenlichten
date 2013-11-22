@@ -153,6 +153,9 @@
     <Compile Include="include\Pattern.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\RainbowFadePattern.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\ws2811.h">
       <SubType>compile</SubType>
     </Compile>
@@ -172,6 +175,9 @@
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="src\Pattern.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\RainbowFadePattern.cpp">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

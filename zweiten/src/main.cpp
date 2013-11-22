@@ -12,6 +12,7 @@
 #include <util/delay.h>
 #include "EZChain.h"
 #include "AlternatePattern.h"
+#include "RainbowFadePattern.h"
 
 EZ_CHAIN(chain, 10, PORTB, 0)
 
@@ -24,14 +25,15 @@ int main(void)
     RGB_t green = {0, 255, 0};
     RGB_t blue = {0, 0, 255};
 
-    AlternatePattern p(&chain, red, green);
+    //AlternatePattern p(&chain, red, green);
+    RainbowFadePattern p(&chain, 4);
     
     while(1)
     {
         p.Logic();
         p.Render();
         chain.Update();
-        _delay_ms(200);
+        _delay_ms(30);
     }
 }
 

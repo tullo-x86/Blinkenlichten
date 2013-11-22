@@ -21,11 +21,14 @@ private:
 public:
 	LedChain(SendFrame sendFrame, RGB_t *buffer, int length);
 	~LedChain();
+    
+    int GetLength();
 
     void SetPixel(int index, RGB_t colour);
-    void Update();
 
-    int GetLength();
+    void ShiftBackward(int count);
+
+    void Update();
 };
 
 #endif
