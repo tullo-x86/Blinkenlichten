@@ -21,6 +21,8 @@ public:
 	virtual void Logic()=0;
 	virtual void Render()=0;
 
+    virtual int GetFrameDelay()=0;
+
 protected:
     Pattern(LedChain *chain);
 };

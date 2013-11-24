@@ -25,6 +25,8 @@ public:
 
 	void Logic();
 	void Render();
+    
+    inline int GetFrameDelay() { return 30; };
 };
 
 #endif

@@ -24,6 +24,8 @@ public:
 
     void Logic();
     void Render();
+
+    inline int GetFrameDelay() { return 200; };
 };
 
 #endif //__ALTERNATEPATTERN_H__

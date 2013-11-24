@@ -20,20 +20,34 @@ int main(void)
 {
     DDRB |= 0x01;
 
-    RGB_t red = {255, 0, 0};
-    RGB_t yellow = {0, 255, 0};
-    RGB_t green = {0, 255, 0};
-    RGB_t blue = {0, 0, 255};
+    const RGB_t red = {255, 0, 0};
+    const RGB_t yellow = {0, 255, 0};
+    const RGB_t green = {0, 255, 0};
+    const RGB_t blue = {0, 0, 255};
 
-    //AlternatePattern p(&chain, red, green);
-    RainbowFadePattern p(&chain, 4);
+    AlternatePattern alternate(&chain, red, green);
+    RainbowFadePattern fade(&chain, 7);
+
+    const uint8_t patternCount = 2;
+    Pattern *patterns[2] = { &alternate, &fade };
+    uint8_t patternIdx = 0;
     
+    int ms = 0;
+    const int maxMs = 3000;
     while(1)
     {
-        p.Logic();
-        p.Render();
+        Pattern *currentPattern = patterns[patternIdx];
+        currentPattern->Logic();
+        currentPattern->Render();
         chain.Update();
-        _delay_ms(30);
+        _delay_ms(currentPattern->GetFrameDelay());
+        ms += currentPattern->GetFrameDelay();
+
+        if (ms >= maxMs)
+        {
+            ms = 0;
+            if (++patternIdx >= patternCount) patternIdx = 0;
+        }
     }
 }
 
