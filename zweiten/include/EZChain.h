@@ -14,7 +14,7 @@
 
 #define EZ_CHAIN(NAME, LENGTH, PORT, PIN) \
 DEFINE_WS2811_FN((send_ ## NAME), (PORT), (PIN)) \
-RGB_t buffer_ ## NAME[10]; \
+RGB_t buffer_ ## NAME[LENGTH]; \
 LedChain NAME(&(send_ ## NAME), (buffer_ ## NAME), (LENGTH));
 
 #endif /* EZCHAIN_H_ */
