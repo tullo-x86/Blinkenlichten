@@ -11,9 +11,9 @@
 RainbowFadePattern::RainbowFadePattern(LedChain *chain, int phaseLength, int brightness)
 : Pattern(chain), 
 _phaseLength(phaseLength),
-_brightnessIncrement(brightness / phaseLength),
 _phase(0),
-_step(0)
+_step(0),
+_brightnessIncrement(brightness / phaseLength)
 {
 
 }

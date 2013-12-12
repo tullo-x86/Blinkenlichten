@@ -23,12 +23,11 @@ int main(void)
 
     const RGB_t red = {24, 0, 0};
     const RGB_t green = {0, 24, 0};
-    const RGB_t plasma = {160, 192, 255};
 
     AlternatePattern alternate(&chain, red, green);
     RainbowFadePattern fade(&chain, 33, 100);
     RainbowFadePattern fastFade(&chain, 10, 100);
-    PlasmaPulsePattern pulse(&chain, plasma);
+    PlasmaPulsePattern pulse(&chain);
 
     const uint8_t patternCount = 1;
     Pattern *patterns[patternCount] = { &pulse };
@@ -42,7 +41,7 @@ int main(void)
         currentPattern->Logic(10);
         currentPattern->Render();
         chain.Update();
-        _delay_ms(10);
+        //_delay_ms(3);
         ms += 10;
 
         if (ms >= maxMs)
