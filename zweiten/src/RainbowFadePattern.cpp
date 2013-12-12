@@ -18,7 +18,7 @@ _step(0)
 
 }
 
-void RainbowFadePattern::Logic()
+void RainbowFadePattern::Logic(unsigned int deltaT)
 {
     if (++_step >= _phaseLength)
     {

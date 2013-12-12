@@ -16,7 +16,7 @@ AlternatePattern::AlternatePattern(LedChain *chain, RGB_t colour1, RGB_t colour2
     _switch = false;
 }
 
-void AlternatePattern::Logic()
+void AlternatePattern::Logic(unsigned int deltaT)
 {
     _switch = !_switch;
 }

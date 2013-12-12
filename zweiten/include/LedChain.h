@@ -22,11 +22,12 @@ public:
 	LedChain(SendFrame sendFrame, RGB_t *buffer, int length);
 	~LedChain();
     
-    int GetLength();
+    inline int GetLength() { return _length; };
 
     void SetPixel(int index, RGB_t colour);
 
     void ShiftBackward(int count);
+    void Clear();
 
     void Update();
 };

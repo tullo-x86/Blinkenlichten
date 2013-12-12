@@ -18,7 +18,7 @@ protected:
     
 public:
 	virtual ~Pattern();
-	virtual void Logic(int deltaT)=0;
+	virtual void Logic(unsigned int deltaT)=0;
 	virtual void Render()=0;
     
 protected:

@@ -13,6 +13,7 @@
 #include "EZChain.h"
 #include "AlternatePattern.h"
 #include "RainbowFadePattern.h"
+#include "PlasmaPulsePattern.h"
 
 EZ_CHAIN(chain, 240, PORTB, 0)
 
@@ -22,13 +23,15 @@ int main(void)
 
     const RGB_t red = {24, 0, 0};
     const RGB_t green = {0, 24, 0};
+    const RGB_t plasma = {160, 192, 255};
 
     AlternatePattern alternate(&chain, red, green);
     RainbowFadePattern fade(&chain, 33, 100);
     RainbowFadePattern fastFade(&chain, 10, 100);
+    PlasmaPulsePattern pulse(&chain, plasma);
 
-    const uint8_t patternCount = 2;
-    Pattern *patterns[patternCount] = { &fade, &fastFade };
+    const uint8_t patternCount = 1;
+    Pattern *patterns[patternCount] = { &pulse };
     uint8_t patternIdx = 0;
     
     unsigned int ms = 0;
@@ -36,11 +39,11 @@ int main(void)
     while(1)
     {
         Pattern *currentPattern = patterns[patternIdx];
-        currentPattern->Logic();
+        currentPattern->Logic(10);
         currentPattern->Render();
         chain.Update();
-        _delay_ms(15);
-        ms += 15;
+        _delay_ms(10);
+        ms += 10;
 
         if (ms >= maxMs)
         {
@@ -50,5 +53,3 @@ int main(void)
     }
 }
 
-// Need to abstract the LED strings
-// Patterns should depend on the string

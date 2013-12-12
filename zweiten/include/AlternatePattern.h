@@ -22,10 +22,8 @@ public:
 	AlternatePattern(LedChain *chain, RGB_t colour1, RGB_t colour2);
 	~AlternatePattern();
 
-    void Logic(int deltaT);
+    void Logic(unsigned int deltaT);
     void Render();
-
-    inline int GetFrameDelay() { return 200; };
 };
 
 #endif //__ALTERNATEPATTERN_H__

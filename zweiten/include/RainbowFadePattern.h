@@ -24,10 +24,8 @@ public:
 	RainbowFadePattern(LedChain *chain, int phaseLength, int brightness);
 	~RainbowFadePattern();
 
-	void Logic(int deltaT);
+	void Logic(unsigned int deltaT);
 	void Render();
-    
-    inline int GetFrameDelay() { return 30; };
 };
 
 #endif

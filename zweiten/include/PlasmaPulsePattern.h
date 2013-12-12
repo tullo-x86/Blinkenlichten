@@ -8,16 +8,18 @@
 class PlasmaPulsePattern : public Pattern
 {
 private:
-    RGB_t _colour;
+    RGB_t _finalColour;
+    RGB_t _currentColour;
+
+    unsigned int _time;
+    unsigned int _position;
 
 public:
     PlasmaPulsePattern(LedChain *chain, RGB_t colour);
 	~PlasmaPulsePattern();
 
-	void Logic();
+	void Logic(unsigned int deltaT);
 	void Render();
-
-    inline int GetFrameDelay() { return 30; };
 };
 
 #endif
