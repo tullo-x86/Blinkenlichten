@@ -14,34 +14,33 @@
 #include "AlternatePattern.h"
 #include "RainbowFadePattern.h"
 
-EZ_CHAIN(chain, 10, PORTB, 0)
+EZ_CHAIN(chain, 240, PORTB, 0)
 
 int main(void)
 {
     DDRB |= 0x01;
 
-    const RGB_t red = {255, 0, 0};
-    const RGB_t yellow = {0, 255, 0};
-    const RGB_t green = {0, 255, 0};
-    const RGB_t blue = {0, 0, 255};
+    const RGB_t red = {24, 0, 0};
+    const RGB_t green = {0, 24, 0};
 
     AlternatePattern alternate(&chain, red, green);
-    RainbowFadePattern fade(&chain, 7);
+    RainbowFadePattern fade(&chain, 33, 100);
+    RainbowFadePattern fastFade(&chain, 10, 100);
 
     const uint8_t patternCount = 2;
-    Pattern *patterns[2] = { &alternate, &fade };
+    Pattern *patterns[patternCount] = { &fade, &fastFade };
     uint8_t patternIdx = 0;
     
-    int ms = 0;
-    const int maxMs = 3000;
+    unsigned int ms = 0;
+    const unsigned int maxMs = 60000;
     while(1)
     {
         Pattern *currentPattern = patterns[patternIdx];
         currentPattern->Logic();
         currentPattern->Render();
         chain.Update();
-        _delay_ms(currentPattern->GetFrameDelay());
-        ms += currentPattern->GetFrameDelay();
+        _delay_ms(15);
+        ms += 15;
 
         if (ms >= maxMs)
         {

@@ -18,9 +18,10 @@ private:
     const int _phaseLength;
     uint8_t _phase;
     uint8_t _step;
+    uint8_t _brightnessIncrement;
 
 public:
-	RainbowFadePattern(LedChain *chain, int phaseLength);
+	RainbowFadePattern(LedChain *chain, int phaseLength, int brightness);
 	~RainbowFadePattern();
 
 	void Logic();
