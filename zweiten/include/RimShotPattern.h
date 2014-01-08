@@ -6,9 +6,14 @@
 #include "Pattern.h"
 #include "hsv.h"
 
+// Drumskin of 21cm across = 65.94cm circumference
+// 65.94cm * (60LED/m) = 39 LEDs
+// 50usec + (1.25 * 24 * 39)usec = ...
+// !! 1,220usec (1.22ms) to update LEDs
+
 // Mics are equidistant -- placed at 120° increments, forming an equilateral triangle
 // packed in a circle (the drum skin).
-// + Conclusion 1: If all three mics spike at the same time, strike was at the drum centre
+// !! Conclusion 1: If all three mics spike at the same time, strike was at the drum centre
 
 // NB: ALL of these are approximate since the speed of sound varies with air temperature
 //     -- see http://www.sengpielaudio.com/calculator-speedsound.htm for details.
@@ -20,18 +25,12 @@
 // Speed of sound = 343m/s == 34,300 cm/s
 // 18 / 34300 == 524.78usec (@20°C) -- 515usec @30°C -- 533usec @10°C
 
-// + Conclusion 2: If no other mic spikes within 525usec, strike is on top of first mic
+// !! Conclusion 2: If no other mic spikes within 525usec, strike is on top of first mic
 
 
 class RimShotPattern : public Pattern
 {
 private:
-    HSV_t _finalColour;
-    HSV_t _currentColour;
-
-    unsigned int _time;
-    unsigned int _position;
-    bool _isCharging;
 
 public:
     RimShotPattern(LedChain *chain);
