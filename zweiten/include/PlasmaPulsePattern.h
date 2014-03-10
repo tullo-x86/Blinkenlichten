@@ -14,7 +14,6 @@ private:
 
     unsigned int _time;
     unsigned int _position;
-    bool _isCharging;
 
 public:
     PlasmaPulsePattern(LedChain *chain);

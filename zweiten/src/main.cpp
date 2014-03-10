@@ -41,7 +41,7 @@ int main(void)
         currentPattern->Logic(10);
         currentPattern->Render();
         chain.Update();
-        //_delay_ms(3);
+        _delay_ms(3);
         ms += 10;
 
         if (ms >= maxMs)

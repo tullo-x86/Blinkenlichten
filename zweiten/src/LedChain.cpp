@@ -20,7 +20,7 @@ LedChain::LedChain(SendFrame sendFrame, RGB_t *buffer, int length)
 
 LedChain::~LedChain() {}
 
-void LedChain::SetPixel(int index, RGB_t colour)
+void LedChain::SetPixel(int index, const RGB_t &colour)
 {
     _buffer[index] = colour;
 }

@@ -1,5 +1,5 @@
 #include "hsv.h"
-
+/*
 RGB_t hsv2rgb(HSV_t hsv) {
     float min;
     float chroma;
@@ -56,3 +56,4 @@ RGB_t hsv2rgb(HSV_t hsv) {
     RGB_t rgb = { (uint8_t)(r*255), (uint8_t)(g*255), (uint8_t)(b*255) };
     return rgb;
 }
+*/

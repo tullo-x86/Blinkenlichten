@@ -147,13 +147,22 @@
     <Compile Include="include\EZChain.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\hsv.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\LedChain.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\Pattern.h">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="include\PlasmaPulsePattern.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="include\RainbowFadePattern.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="include\RimShotPattern.h">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="include\ws2811.h">
@@ -168,6 +177,9 @@
     <Compile Include="src\delete.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\hsv.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\LedChain.cpp">
       <SubType>compile</SubType>
     </Compile>
@@ -177,7 +189,13 @@
     <Compile Include="src\Pattern.cpp">
       <SubType>compile</SubType>
     </Compile>
+    <Compile Include="src\PlasmaPulsePattern.cpp">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="src\RainbowFadePattern.cpp">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="src\RimShotPattern.cpp">
       <SubType>compile</SubType>
     </Compile>
   </ItemGroup>

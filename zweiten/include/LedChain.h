@@ -24,7 +24,7 @@ public:
     
     inline int GetLength() { return _length; };
 
-    void SetPixel(int index, RGB_t colour);
+    void SetPixel(int index, const RGB_t &colour);
 
     void ShiftBackward(int count);
     void Clear();
